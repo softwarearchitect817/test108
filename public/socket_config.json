@@ -1,0 +1,14 @@
+{
+
+"port":"32053/slots",
+
+"host":"casinosweeps.online",
+"prefix":"https://",
+
+"host_ws":"casinosweeps.online",
+"prefix_ws":"wss://",
+
+"ssl":true,
+"timezone":"Europe/Berlin"
+
+}

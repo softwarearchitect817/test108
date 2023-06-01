@@ -1,0 +1,8 @@
+/app/Games
+/node_modules
+/public/games
+/public/Default/ico
+/vendor
+/storage
+/PTWebSocket/node_modules
+.env
