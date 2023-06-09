@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/woocasino/css/appef20.css">
+<link rel="stylesheet" href="/public/woocasino/css/appef20.css">
 <style type="text/css">
     .info-value {
         color: grey;
@@ -38,58 +38,79 @@
 <header class="header">
     <div class="header__mob-container">
         <div class="header__logo">
-            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/woocasino/resources/images/logo.png" alt="247 Casino"> </a>
+            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img"
+                    src="/public/woocasino/resources/images/logo.png" alt="247 Casino"> </a>
         </div>
         <div class="header__mob-wrp">
-            <button class="header__mob-btn button button-secondary button-small ng-scope" ng-click="openModal($event, '#my-account')">@lang('app.my_profile')</button>
-            <a href="{{ route('frontend.auth.logout') }}" <button class="header__mob-btn button button-secondary button-small ng-scope">@lang('app.logout')</a></button>
+            <button class="header__mob-btn button button-secondary button-small ng-scope"
+                ng-click="openModal($event, '#my-account')">@lang('app.my_profile')</button>
+            <a href="{{ route('frontend.auth.logout') }}" <button
+                class="header__mob-btn button button-secondary button-small ng-scope">@lang('app.logout')</a></button>
             <br>
-            <a class="header__mobile-menu"> <span class="header__mobile-menu-icon"></span> <span class="header__mobile-menu-icon"></span> <span class="header__mobile-menu-icon"></span> </a>
+            <a class="header__mobile-menu"> <span class="header__mobile-menu-icon"></span> <span
+                    class="header__mobile-menu-icon"></span> <span class="header__mobile-menu-icon"></span> </a>
         </div>
     </div>
     <div class="header__container">
         <div class="header__logo">
-            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/woocasino/resources/images/logo.png" alt="WooCasino"> </a>
+            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img"
+                    src="/public/woocasino/resources/images/logo.png" alt="WooCasino"> </a>
         </div>
         <div class="header__container-bg">
             <div class="header-auth ng-isolate-scope">
                 <div class="header-auth__anon ng-scope">
-                    <div class="header-auth__anon-status"> <img class="header-auth__w-img-img" src="/woocasino/resources/images/status/w1.svg" alt=""> </div>
-                    <div><button class="statuses-panel_btn button button-primary ng-scope" ng-click="openModal($event, '#my-account')">@lang('app.depositb')</button></div>
+                    <div class="header-auth__anon-status"> <img class="header-auth__w-img-img"
+                            src="/public/woocasino/resources/images/status/w1.svg" alt=""> </div>
+                    <div><button class="statuses-panel_btn button button-primary ng-scope"
+                            ng-click="openModal($event, '#my-account')">@lang('app.depositb')</button></div>
 
-                    <div> <span style=" font-size:26px;color:#ffbb39;" class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
+                    <div> <span style=" font-size:26px;color:#ffbb39;"
+                            class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
                             {{ isset($currency) ? $currency : 'EUR' }}</span></div>
 
-                    @if( !isset(auth()->user()->username) )
-                    <div class="header-auth__anon-btn-wrp">
-                        <button class="modal-btn button button-primary header-auth__reg-btn ng-scope" data-name="modal-register" ng-click="openModal($event, '#registration-confirm')">@lang('app.register')</button>
-                        <button class="modal-btn button button-secondary header-auth__login-btn ng-scope" ng-click="openModal($event, '#login-modal')">@lang('app.log_in')</button>
-                    </div>
+                    @if (!isset(auth()->user()->username))
+                        <div class="header-auth__anon-btn-wrp">
+                            <button class="modal-btn button button-primary header-auth__reg-btn ng-scope"
+                                data-name="modal-register"
+                                ng-click="openModal($event, '#registration-confirm')">@lang('app.register')</button>
+                            <button class="modal-btn button button-secondary header-auth__login-btn ng-scope"
+                                ng-click="openModal($event, '#login-modal')">@lang('app.log_in')</button>
+                        </div>
                     @endif
                 </div>
             </div>
             <nav class="header-menu ng-scope ng-isolate-scope" type="main-menu">
                 <div class="header-menu__live">
-                    <a class="header-menu__live-link" scroll-up="" href="{{route('frontend.game.list.category', 'slots')}}">
-                        <span class="header-menu__live-icon icon-woo-menu-default icon-woo-blackjack"></span> <span class="header-menu__live-text ng-scope">@lang('app.slots')</span>
+                    <a class="header-menu__live-link" scroll-up=""
+                        href="{{ route('frontend.game.list.category', 'slots') }}">
+                        <span class="header-menu__live-icon icon-woo-menu-default icon-woo-blackjack"></span> <span
+                            class="header-menu__live-text ng-scope">@lang('app.slots')</span>
                     </a>
-                    <a class="header-menu__live-link" scroll-up="" href="{{route('frontend.game.list.category', 'hot')}}">
-                        <span class="header-menu__live-icon icon-woo-menu-default icon-woo-roulette"></span> <span class="header-menu__live-text ng-scope">@lang('app.hot_game')</span>
+                    <a class="header-menu__live-link" scroll-up=""
+                        href="{{ route('frontend.game.list.category', 'hot') }}">
+                        <span class="header-menu__live-icon icon-woo-menu-default icon-woo-roulette"></span> <span
+                            class="header-menu__live-text ng-scope">@lang('app.hot_game')</span>
                     </a>
                 </div>
                 <ul class="header-menu__list">
-                    @if( settings('use_all_categories') || true)
-                    <li class="header-menu__item ng-scope">
-                        <a class="header-menu__link header-menu__link--games @if($currentSliderNum != -1 && $currentSliderNum == 'all') header-menu__link--current @endif" scroll-up="" href="{{ route('frontend.game.list.category', 'all') }}"> <i class="header-menu__icon icon-woo-menu-default icon-woo-bgaming-slot-battle"></i> <span class="header-menu__text ng-binding">@lang('app.all')</span> </a>
-                    </li>
+                    @if (settings('use_all_categories') || true)
+                        <li class="header-menu__item ng-scope">
+                            <a class="header-menu__link header-menu__link--games @if ($currentSliderNum != -1 && $currentSliderNum == 'all') header-menu__link--current @endif"
+                                scroll-up="" href="{{ route('frontend.game.list.category', 'all') }}"> <i
+                                    class="header-menu__icon icon-woo-menu-default icon-woo-bgaming-slot-battle"></i>
+                                <span class="header-menu__text ng-binding">@lang('app.all')</span> </a>
+                        </li>
                     @endif
 
                     @if ($categories && count($categories))
-                    @foreach($categories AS $index=>$category)
-                    <li class="header-menu__item ng-scope">
-                        <a class="header-menu__link header-menu__link--games @if($currentSliderNum != -1 && $currentSliderNum == $category->href) header-menu__link--current @endif" scroll-up="" href="{{ route('frontend.game.list.category', $category->href) }}"> <i class="header-menu__icon icon-woo-menu-default icon-woo-bgaming-slot-battle"></i> <span class="header-menu__text ng-binding">{{ $category->title }}</span> </a>
-                    </li>
-                    @endforeach
+                        @foreach ($categories as $index => $category)
+                            <li class="header-menu__item ng-scope">
+                                <a class="header-menu__link header-menu__link--games @if ($currentSliderNum != -1 && $currentSliderNum == $category->href) header-menu__link--current @endif"
+                                    scroll-up="" href="{{ route('frontend.game.list.category', $category->href) }}">
+                                    <i class="header-menu__icon icon-woo-menu-default icon-woo-bgaming-slot-battle"></i>
+                                    <span class="header-menu__text ng-binding">{{ $category->title }}</span> </a>
+                            </li>
+                        @endforeach
                     @endif
                 </ul>
             </nav>
@@ -99,7 +120,8 @@
 
 <div class="modal" id="my-account" style="display: none;max-height: 100%;">
     <header class="modal__header">
-        <p style="text-align:left; margin-left:15px;"> <img src="/frontend/Default/img/logo1.png">{{ settings('app_name') }}.....Your Profile</p>
+        <p style="text-align:left; margin-left:15px;"> <img
+                src="/public/frontend/Default/img/logo1.png">{{ settings('app_name') }}.....Your Profile</p>
 
         <span ng-click="closeModal($event)" class="modal__icon icon icon_cancel js-close-popup"></span>
     </header>
@@ -121,40 +143,47 @@
                 <br><br>
                 <form class="popup__form">
                     <div class="profile">
-		
+
                         <ul class="col-6 footer__item-acc-info" style="padding: 5px 0px;">
                             @lang('app.pyour_balance_ttl')
-                            <li style="font-black"><span class="info-name">@lang('app.pyour_balance'):</span> <span class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
+                            <li style="font-black"><span class="info-name">@lang('app.pyour_balance'):</span> <span
+                                    class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
                                     {{ isset($currency) ? $currency : 'USD' }}</span></li>
-                            <li class="font-black"><span class="info-name">@lang('app.pyour_bonus'):</span> <span class="info-value bonusValue">{{ number_format(auth()->user()->balance * 2, 2, '.', '') }}
+                            <li class="font-black"><span class="info-name">@lang('app.pyour_bonus'):</span> <span
+                                    class="info-value bonusValue">{{ number_format(auth()->user()->balance * 2, 2, '.', '') }}
                                     {{ isset($currency) ? $currency : 'USD' }}</span></li>
-                            <li class="font-black"><span class="info-name">@lang('app.pyour_wager'):</span> <span class="info-value wager">{{ number_format(auth()->user()->balance * 3, 2, '.', '') }}
+                            <li class="font-black"><span class="info-name">@lang('app.pyour_wager'):</span> <span
+                                    class="info-value wager">{{ number_format(auth()->user()->balance * 3, 2, '.', '') }}
                                     {{ isset($currency) ? $currency : 'USD' }}</span></li>
                             <!-- class disabled -->
                             @if (isset($refund) &&
-                            $refund &&
-                            auth()->user()->present()->count_refund > 0 &&
-                            auth()->user()->present()->balance <= $refund->min_balance)
+                                    $refund &&
+                                    auth()->user()->present()->count_refund > 0 &&
+                                    auth()->user()->present()->balance <= $refund->min_balance)
                                 <li class="font-black refunds-icon"><span class="info-name">@lang('app.pyour_refunds'):</span>
-                                    <span class="info-value count_refund" id="refunds">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
+                                    <span class="info-value count_refund"
+                                        id="refunds">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
                                         {{ isset($currency) ? $currency : 'USD' }}</span>
                                 </li>
-                                @else
+                            @else
                                 <li class="font-black refunds-icon disabled">
                                     <span class="info-name">@lang('app.pyour_refunds'):</span>
-                                    <span class="info-value count_refund">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
+                                    <span
+                                        class="info-value count_refund">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
                                         {{ isset($currency) ? $currency : 'USD' }}</span>
                                 </li>
-                                @endif
+                            @endif
 
                         </ul>
 
                     </div>
 
                 </form>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:150px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png"
+                        style="margin-top:150px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/profilep.png" style="margin-top:235px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/profilep.png"
+                        style="margin-top:235px;opacity: .9;" < /></div>
             </div>
 
             <!--
@@ -181,7 +210,7 @@
                                         <input type="file" class="file__input">
                                         <div class="table__add-btn">Add</div>
                                     </div>
-                                    
+
                                 </td>
                                 <td></td>
                             </tr>
@@ -202,7 +231,7 @@
                             <tr>
                                 <td>3</td>
                                 <td class="table__doc">
-                                    
+
                                     <div class="table__doc-name">Utility bill</div>
                                     <div class="table__wrap">
                                         <div class="table__help table__help--front"></div>
@@ -253,24 +282,24 @@
                                 </thead>
                                 <tbody>
                                     @if (isset($gamestat) && count($gamestat))
-                                    @foreach ($gamestat as $k=>$stat)
-                                    <tr>
-                                        <td>{{ $k+1 }}</td>
-                                        {{-- <td>{{ date('Y-m-d H:i', strtotime($stat->date_time)) }}</td> --}}
-                                        <td>{{ $stat->date_time }}</td>
-                                        <td>
-                                            <a href="{{ route('frontend.game.go', $stat->game) }}?api_exit=/">
-                                                {{ $stat->game }}
-                                            </a>
-                                        </td>
-                                        <td>{{ $stat->bet }}</td>
-                                        <td>{{ $stat->win }}</td>
-                                    </tr>
-                                    @endforeach
+                                        @foreach ($gamestat as $k => $stat)
+                                            <tr>
+                                                <td>{{ $k + 1 }}</td>
+                                                {{-- <td>{{ date('Y-m-d H:i', strtotime($stat->date_time)) }}</td> --}}
+                                                <td>{{ $stat->date_time }}</td>
+                                                <td>
+                                                    <a href="{{ route('frontend.game.go', $stat->game) }}?api_exit=/">
+                                                        {{ $stat->game }}
+                                                    </a>
+                                                </td>
+                                                <td>{{ $stat->bet }}</td>
+                                                <td>{{ $stat->win }}</td>
+                                            </tr>
+                                        @endforeach
                                     @else
-                                    <tr>
-                                        <td colspan="6">@lang('app.no_data')</td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="6">@lang('app.no_data')</td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
@@ -291,20 +320,20 @@
                                 </thead>
                                 <tbody>
                                     @if (isset($depositlist) && count($depositlist))
-                                    @foreach ($depositlist as $k=>$row)
-                                    <tr>
-                                        <td>{{ $k+1 }}</td>
-                                        {{-- <td>{{ date('Y-m-d H:i', strtotime($row->created_at)) }}</td> --}}
-                                        <td>{{ $row->created_at }}</td>
-                                        <td>{{ $row->id }}</td>
-                                        <td>{{ $row->sum }} {{ $row->currency }}</td>
-                                        <td>{{ $row->status }}</td>
-                                    </tr>
-                                    @endforeach
+                                        @foreach ($depositlist as $k => $row)
+                                            <tr>
+                                                <td>{{ $k + 1 }}</td>
+                                                {{-- <td>{{ date('Y-m-d H:i', strtotime($row->created_at)) }}</td> --}}
+                                                <td>{{ $row->created_at }}</td>
+                                                <td>{{ $row->id }}</td>
+                                                <td>{{ $row->sum }} {{ $row->currency }}</td>
+                                                <td>{{ $row->status }}</td>
+                                            </tr>
+                                        @endforeach
                                     @else
-                                    <tr>
-                                        <td colspan="6">@lang('app.no_data')</td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="6">@lang('app.no_data')</td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
@@ -326,21 +355,22 @@
                                 </thead>
                                 <tbody>
                                     @if (isset($withdrawlist) && count($withdrawlist))
-                                    @foreach ($withdrawlist as $k=>$row)
-                                    <tr>
-                                        <td>{{ $k+1 }}</td>
-                                        {{-- <td>{{ date('Y-m-d H:i', strtotime($row->created_at)) }}</td> --}}
-                                        <td>{{ $row->created_at }}</td>
-                                        <td>{{ $row->id }}</td>
-                                        <td>{{ $row->amount }} {{ $row->currency }}</td>
-                                        <td>{{ $row->wallet }}</td>
-                                        <td>{{ !$row->status?"Pending":$row->status==1?"Approved":"Rejected" }}</td>
-                                    </tr>
-                                    @endforeach
+                                        @foreach ($withdrawlist as $k => $row)
+                                            <tr>
+                                                <td>{{ $k + 1 }}</td>
+                                                {{-- <td>{{ date('Y-m-d H:i', strtotime($row->created_at)) }}</td> --}}
+                                                <td>{{ $row->created_at }}</td>
+                                                <td>{{ $row->id }}</td>
+                                                <td>{{ $row->amount }} {{ $row->currency }}</td>
+                                                <td>{{ $row->wallet }}</td>
+                                                <td>{{ (!$row->status ? 'Pending' : $row->status == 1) ? 'Approved' : 'Rejected' }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     @else
-                                    <tr>
-                                        <td colspan="6">@lang('app.no_data')</td>
-                                    </tr>
+                                        <tr>
+                                            <td colspan="6">@lang('app.no_data')</td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
@@ -350,9 +380,11 @@
                     </div>
 
                 </div>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:315px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png"
+                        style="margin-top:315px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/history.png" style="margin-top:400px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/history.png"
+                        style="margin-top:400px;opacity: .9;" < /></div>
             </div>
 
             <div class="popup__cont active" id="div_balance">
@@ -365,127 +397,152 @@
                         </div>
                     </div>-->
                 <div class="deposit">
-                    @if( settings('payment_coinbase') && \VanguardLTE\Lib\Setting::is_available('coinbase', auth()->user()->shop_id) )
-                    <div class="deposit__item">
-                        <div class="deposit__box">
-                            <div class="deposit__name">Crypto Payment</div>
-                            <div class="deposit__payments">
-                                <img src="/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">
-                            </div>
-                        </div>
-                        <div class="deposit__cont" style="overflow: hidden; display: none;">
-                            {!! Form::open(['route' => 'frontend.balance.post', 'method' => 'POST']) !!}
-                            <div class="modal__content contentpay">
-                                <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
-                                    <div class="input">
-                                        <button style="min-width: 100%;" class="popup__button button">$EUR etc &gt;&gt;&gt;</button>
-                                    </div>
-                                    <div class="modal__input input">
-                                        <input type="text" name="summ" class="modal__input-inner input__inner" placeholder="Enter Amount" required="" style="width:100%">
-                                    </div>
-                                </div>
-                                <div class="input" style="display:grid">
-                                    <input type="hidden" name="system" value="coinbase">
-                                    <input type="submit" name="description" value="Pay balance" class="popup__button button">
-                                </div>
-                            </div>
-                            {!! Form::close() !!}
-                        </div>
-                    </div>
-                    @endif
-                    @if( settings('payment_btcpayserver') && \VanguardLTE\Lib\Setting::is_available('btcpayserver', auth()->user()->shop_id) )||
-                    <div class="deposit__item">
-                        <div class="deposit__box">
-                            <div class="deposit__name">@lang('app.btcpayserver')</div>
-                            <div class="deposit__payments">
-                                <!--<img src="/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">-->
-                            </div>
-                        </div>
-                        <div class="deposit__cont" style="overflow: hidden; display: none;">
-                            {!! Form::open(['route' => 'frontend.balance.post', 'method' => 'POST']) !!}
-                            <div class="modal__content contentpay">
-                                <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
-                                    <div class="input">
-                                        <button style="min-width: 100%;" class="popup__button button">$USD etc &gt;&gt;&gt;</button>
-                                    </div>
-                                    <div class="modal__input input">
-                                        <input type="text" name="summ" class="modal__input-inner input__inner" placeholder="Enter Amount" required="" style="width:100%">
-                                    </div>
-                                </div>
-                                <div class="input" style="display:grid">
-                                    <input type="hidden" name="system" value="btcpayserver">
-                                    <input type="submit" name="description" value="Pay balance" class="popup__button button">
-                                </div>
-                            </div>
-                            {!! Form::close() !!}
-                        </div>
-                    </div>
-                    @endif
-                    @if( settings('payment_pin'))||
-                    <div class="deposit__item">
-                        <div class="deposit__box">
-                            <div class="deposit__name">@lang('app.pincode')</div>
-                            <div class="deposit__payments">
-                                <img src="/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img">
-                            </div>
-                        </div>
-                        <div class="deposit__cont" style="overflow: hidden; display: none;">
-                            <div class="modal__content contentpay">
-                                <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
-                                    <div class="input">
-                                        <button style="min-width: 100%;" class="popup__button button">pin code &gt;&gt;&gt;</button>
-                                    </div>
-                                    <div class="modal__input input">
-                                        <input type="text" name="summ" id="inputPin" class="modal__input-inner input__inner" placeholder="Enter Amount" required="" style="width:100%">
-                                    </div>
-                                </div>
-                                <div class="input" style="display:grid">
-                                    <input type="hidden" name="system" value="pincode">
-                                    <input type="button" id="send" name="description" value="Pay balance" class="popup__button button">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @if( settings('payment_metamask') && \VanguardLTE\Lib\Setting::is_available('metamask', auth()->user()->shop_id))||
-                    <div class="deposit__item">
-                        <a id="metamaskBtn">
+                    @if (settings('payment_coinbase') && \VanguardLTE\Lib\Setting::is_available('coinbase', auth()->user()->shop_id))
+                        <div class="deposit__item">
                             <div class="deposit__box">
-                                <div class="deposit__name">Metamask</div>
+                                <div class="deposit__name">Crypto Payment</div>
                                 <div class="deposit__payments">
-                                    {{-- <img src="/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img"> --}}
+                                    <img src="/public/frontend/Default/img/visa.png" alt=""
+                                        class="deposit__payments-img">
                                 </div>
                             </div>
-                        </a>
-                        <div class="deposit__cont" style="overflow: hidden; display: none;">
-                            <div class="modal__content contentpay">
-                                <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
-                                    <div class="modal__input input">
-                                        <select name="txtcurrency" id="metamaskCurrency" class="modal__input-inner input__inner" style="width: 200px;">
-                                            <option value="busd">BUSD</option>
-                                            <option value="usdt">USDT</option>
-                                            <option value="usdc">USDC</option>
-                                        </select>
+                            <div class="deposit__cont" style="overflow: hidden; display: none;">
+                                {!! Form::open(['route' => 'frontend.balance.post', 'method' => 'POST']) !!}
+                                <div class="modal__content contentpay">
+                                    <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
+                                        <div class="input">
+                                            <button style="min-width: 100%;" class="popup__button button">$EUR etc
+                                                &gt;&gt;&gt;</button>
+                                        </div>
+                                        <div class="modal__input input">
+                                            <input type="text" name="summ"
+                                                class="modal__input-inner input__inner" placeholder="Enter Amount"
+                                                required="" style="width:100%">
+                                        </div>
                                     </div>
-                                    <div class="modal__input input">
-                                        <input type="text" name="summ" id="metamaskAmount" class="modal__input-inner input__inner" placeholder="Enter Amount" required="" style="width:100%">
+                                    <div class="input" style="display:grid">
+                                        <input type="hidden" name="system" value="coinbase">
+                                        <input type="submit" name="description" value="Pay balance"
+                                            class="popup__button button">
                                     </div>
                                 </div>
-                                <div class="input" style="display:grid">
-                                    <input type="hidden" name="system" value="metamask">
-                                    <input type="button" name="description" id="metamaskSend" value="Pay balance" class="popup__button button">
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    @endif
+                    @if (settings('payment_btcpayserver') && \VanguardLTE\Lib\Setting::is_available('btcpayserver', auth()->user()->shop_id))
+                        ||
+                        <div class="deposit__item">
+                            <div class="deposit__box">
+                                <div class="deposit__name">@lang('app.btcpayserver')</div>
+                                <div class="deposit__payments">
+                                    <!--<img src="/public/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">-->
+                                </div>
+                            </div>
+                            <div class="deposit__cont" style="overflow: hidden; display: none;">
+                                {!! Form::open(['route' => 'frontend.balance.post', 'method' => 'POST']) !!}
+                                <div class="modal__content contentpay">
+                                    <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
+                                        <div class="input">
+                                            <button style="min-width: 100%;" class="popup__button button">$USD etc
+                                                &gt;&gt;&gt;</button>
+                                        </div>
+                                        <div class="modal__input input">
+                                            <input type="text" name="summ"
+                                                class="modal__input-inner input__inner" placeholder="Enter Amount"
+                                                required="" style="width:100%">
+                                        </div>
+                                    </div>
+                                    <div class="input" style="display:grid">
+                                        <input type="hidden" name="system" value="btcpayserver">
+                                        <input type="submit" name="description" value="Pay balance"
+                                            class="popup__button button">
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    @endif
+                    @if (settings('payment_pin'))
+                        ||
+                        <div class="deposit__item">
+                            <div class="deposit__box">
+                                <div class="deposit__name">@lang('app.pincode')</div>
+                                <div class="deposit__payments">
+                                    <img src="/public/frontend/Default/img/pincode.png" alt=""
+                                        class="deposit__payments-img">
+                                </div>
+                            </div>
+                            <div class="deposit__cont" style="overflow: hidden; display: none;">
+                                <div class="modal__content contentpay">
+                                    <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
+                                        <div class="input">
+                                            <button style="min-width: 100%;" class="popup__button button">pin code
+                                                &gt;&gt;&gt;</button>
+                                        </div>
+                                        <div class="modal__input input">
+                                            <input type="text" name="summ" id="inputPin"
+                                                class="modal__input-inner input__inner" placeholder="Enter Amount"
+                                                required="" style="width:100%">
+                                        </div>
+                                    </div>
+                                    <div class="input" style="display:grid">
+                                        <input type="hidden" name="system" value="pincode">
+                                        <input type="button" id="send" name="description" value="Pay balance"
+                                            class="popup__button button">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
+                    @if (settings('payment_metamask') && \VanguardLTE\Lib\Setting::is_available('metamask', auth()->user()->shop_id))
+                        ||
+                        <div class="deposit__item">
+                            <a id="metamaskBtn">
+                                <div class="deposit__box">
+                                    <div class="deposit__name">Metamask</div>
+                                    <div class="deposit__payments">
+                                        {{-- <img src="/public/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img"> --}}
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="deposit__cont" style="overflow: hidden; display: none;">
+                                <div class="modal__content contentpay">
+                                    <div class="deposit__inner" style="grid-template-columns: 35% 55%;">
+                                        <div class="modal__input input">
+                                            <select name="txtcurrency" id="metamaskCurrency"
+                                                class="modal__input-inner input__inner" style="width: 200px;">
+                                                <option value="busd">BUSD</option>
+                                                <option value="usdt">USDT</option>
+                                                <option value="usdc">USDC</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal__input input">
+                                            <input type="text" name="summ" id="metamaskAmount"
+                                                class="modal__input-inner input__inner" placeholder="Enter Amount"
+                                                required="" style="width:100%">
+                                        </div>
+                                    </div>
+                                    <div class="input" style="display:grid">
+                                        <input type="hidden" name="system" value="metamask">
+                                        <input type="button" name="description" id="metamaskSend"
+                                            value="Pay balance" class="popup__button button">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     @endif
                 </div>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:345px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png"
+                        style="margin-top:345px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/deppage.png" style="margin-top:432px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/deppage.png"
+                        style="margin-top:432px;opacity: .9;" < /></div>
             </div>
             <div class="popup__cont" id="div_withdraw">
-                <p style="color: #ff0000;font-size: 16px;font-weight:normal;"><img src="/assets/icons8-support-60.png" style="float: left;position: relative;top: -13px;margin-right: 12px;}" />..</p>
+                <p style="color: #ff0000;font-size: 16px;font-weight:normal;"><img
+                        src="/public/assets/icons8-support-60.png"
+                        style="float: left;position: relative;top: -13px;margin-right: 12px;}" />..</p>
                 <br><br>
                 <header class="modal__header">
                     <div class="span modal__title">@lang('app.money_date')</div>
@@ -495,7 +552,8 @@
 
                     <div class="deposit__inner">
                         <div class="modal__input input">
-                            <input type="text" name="txtamount" placeholder="Enter Amount" class="modal__input-inner input__inner" style="">
+                            <input type="text" name="txtamount" placeholder="Enter Amount"
+                                class="modal__input-inner input__inner" style="">
                         </div>
                         <div class="modal__input input">
                             <select name="txtcurrency" class="modal__input-inner input__inner" style="width: 200px;">
@@ -506,19 +564,24 @@
                     </div>
                     <div style="display: grid;grid-template-columns: 1fr;">
                         <div class="modal__input input">
-                            <input type="text" name="wallet" placeholder="Enter your wallet address" class="modal__input-inner input__inner" style="width: 100%; text-align: center;" required>
+                            <input type="text" name="wallet" placeholder="Enter your wallet address"
+                                class="modal__input-inner input__inner" style="width: 100%; text-align: center;"
+                                required>
                         </div>
                     </div>
                 </div>
 
                 <div class="popup__footer">
-                    <input type="submit" name="submit" value="@lang('app.save')" class="popup__button button btn btng">
+                    <input type="submit" name="submit" value="@lang('app.save')"
+                        class="popup__button button btn btng">
                 </div>
                 <div class="popup__warn" style="font-size:16px; align:center; ">***@lang('app.min_notice_date')</div>
-                <div class="info-value"><span>@lang('app.pyour_balance'):</span> <span>{{ number_format(auth()->user()->balance, 2, '.', '') }}
-                        {{ isset($currency) ? $currency : 'USD' }}</span></div>
+                <div class="info-value"><span>@lang('app.pyour_balance'):</span>
+                    <span>{{ number_format(auth()->user()->balance, 2, '.', '') }}
+                        {{ isset($currency) ? $currency : 'USD' }}</span>
+                </div>
                 {!! Form::close() !!}
-                <img src="/frontend/Default/img/modefooter/withdraw.png" < />
+                <img src="/public/frontend/Default/img/modefooter/withdraw.png" < />
             </div>
         </div>
     </div>
@@ -543,37 +606,36 @@
                             </div>
                         </div>
                     </div>
-                    <span ng-click="closeModal($event)" class="modal__icon icon icon_cancel js-close-popup close-popup"></span>
+                    <span ng-click="closeModal($event)"
+                        class="modal__icon icon icon_cancel js-close-popup close-popup"></span>
                 </div>
             </div>
         </div>
     </div>
     <script>
         (function($) {
-$(function() {
+            $(function() {
 
-    $('.paymaster .pay__title').click(function() {
-       if ($(".contentmaster").hasClass("active")) {
-            $('.contentmaster').removeClass('active');
-       } else {
-        $('.contentmaster').removeClass('active');
-           $('.contentmaster').addClass('active');
-       }
-     });
+                $('.paymaster .pay__title').click(function() {
+                    if ($(".contentmaster").hasClass("active")) {
+                        $('.contentmaster').removeClass('active');
+                    } else {
+                        $('.contentmaster').removeClass('active');
+                        $('.contentmaster').addClass('active');
+                    }
+                });
 
-        $('.payvisa .pay__title').click(function() {
-       if ($(".contentpay").hasClass("active")) {
-            $('.contentpay').removeClass('active');
-       } else {
-        $('.contentpay').removeClass('active');
-           $('.contentpay').addClass('active');
-       }
-     });
+                $('.payvisa .pay__title').click(function() {
+                    if ($(".contentpay").hasClass("active")) {
+                        $('.contentpay').removeClass('active');
+                    } else {
+                        $('.contentpay').removeClass('active');
+                        $('.contentpay').addClass('active');
+                    }
+                });
 
-});
-})(jQuery);
-        
-     
+            });
+        })(jQuery);
     </script>
     <style>
         .pay__header {
@@ -618,13 +680,15 @@ $(function() {
             <div class="modal__content tabs__content contentmaster">
                 <form name="Pay" method="post" action="/send.php" accept-charset="UTF-8">
                     <div class="modal__input input2">
-                        <input type="text" name="amount" class="modal__input-inner input__inner" placeholder="Enter Amount" required style="width:100%">
+                        <input type="text" name="amount" class="modal__input-inner input__inner"
+                            placeholder="Enter Amount" required style="width:100%">
                     </div>
                     <input type="hidden" name="currency" value="978">
                     <input type="hidden" name="payway" value="card_eur">
                     <input type="hidden" name="shop_id" value="133">
                     <input type="hidden" name="shop_order_id" value="user_{{ auth()->user()->id }}">
-                    <input type="submit" type="hidden" name="description" value="Verify Credit Card" class="button masterbutton">
+                    <input type="submit" type="hidden" name="description" value="Verify Credit Card"
+                        class="button masterbutton">
                 </form>
             </div>
             <header class="modal__header pay__header payvisa">
@@ -638,7 +702,8 @@ $(function() {
 
                         <div class="modal__input input">
 
-                            <input type="text" id="cctextboxid" name="cctextbox" placeholder="Enter Amount" class="modal__input-inner input__inner" required>
+                            <input type="text" id="cctextboxid" name="cctextbox" placeholder="Enter Amount"
+                                class="modal__input-inner input__inner" required>
                         </div>
                         <div class="modal__input input">
                             <select name="currency" id="currency" class="modal__input-inner input__inner">
@@ -678,7 +743,8 @@ $(function() {
                         </div>
                     </div>
                     <div class="modal__error" style="display: none"></div>
-                    <input id="elem" type="button" name="submit" value="@lang('app.verify_credit_card')" class="popup__button button btn btng masterbutton2">
+                    <input id="elem" type="button" name="submit" value="@lang('app.verify_credit_card')"
+                        class="popup__button button btn btng masterbutton2">
                 </div>
                 <div class="popup__footer">
 
@@ -691,16 +757,19 @@ $(function() {
             <div class="span modal__title">@lang('app.money_date')</div>
         </header>
 
-        <form name="valform1" action="{{route('frontend.profile.withdraw')}}" method="POST">
+        <form name="valform1" action="{{ route('frontend.profile.withdraw') }}" method="POST">
             @csrf
             <div class="modal__content">
 
                 <div class="row">
                     <div class="modal__input input">
-                        <input type="text" name="txtamount" placeholder="Enter Amount" class="modal__input-inner input__inner" style="background-color: rgba(255, 255, 255, 0.3);color:#a5a3bd">
+                        <input type="text" name="txtamount" placeholder="Enter Amount"
+                            class="modal__input-inner input__inner"
+                            style="background-color: rgba(255, 255, 255, 0.3);color:#a5a3bd">
                     </div>
                     <div class="modal__input input">
-                        <select name="txtcurrency" class="modal__input-inner input__inner" style="background-color: rgba(255, 255, 255, 0.3);">
+                        <select name="txtcurrency" class="modal__input-inner input__inner"
+                            style="background-color: rgba(255, 255, 255, 0.3);">
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
                         </select>
@@ -708,7 +777,8 @@ $(function() {
                 </div>
             </div>
             <div class="popup__footer">
-                <input type="submit" name="submit" value="@lang('app.save')" class="popup__button button btn btng">
+                <input type="submit" name="submit" value="@lang('app.save')"
+                    class="popup__button button btn btng">
             </div>
         </form>
     </div>
@@ -722,45 +792,55 @@ $(function() {
     </header>
     <div class="modal__body">
         <div class="modal__content">
-            <p class="text-center" style="
+            <p class="text-center"
+                style="
                     text-align: center;
                     font-size: calc(0.90vw + 1rem);
                     color: white;
-                ">Welcome {{ auth()->user()->username }}</p>
+                ">
+                Welcome {{ auth()->user()->username }}</p>
             <p data-nsfw-filter-status="swf" style="text-align: center;">
-                <img src="/frontend/Default/img/user1.png" data-nsfw-filter-status="sfw" style="visibility: visible;">
+                <img src="/public/frontend/Default/img/user1.png" data-nsfw-filter-status="sfw"
+                    style="visibility: visible;">
             </p>
-            <p class="text-center" style="text-align: center;font-size: calc(0.90vw + 0.3rem);color: white;">@lang('app.current_statts_date')</p>
+            <p class="text-center" style="text-align: center;font-size: calc(0.90vw + 0.3rem);color: white;">
+                @lang('app.current_statts_date')</p>
             <hr>
             <br>
             <div class="modal__table" style="width: 100%; height: auto;">
                 <div>
                     <ul class="col-6 footer__item-acc-info" style="padding: 5px 0px;">
-                        <li class="font-white"><span class="info-name">@lang('app.pyour_balance'):</span> <span class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
+                        <li class="font-white"><span class="info-name">@lang('app.pyour_balance'):</span> <span
+                                class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
                                 {{ isset($currency) ? $currency : 'USD' }}</span></li>
-                        <li class="font-white"><span class="info-name">@lang('app.pyour_bonus'):</span> <span class="info-value bonusValue">{{ number_format(auth()->user()->bonus, 2, '.', '') }}
+                        <li class="font-white"><span class="info-name">@lang('app.pyour_bonus'):</span> <span
+                                class="info-value bonusValue">{{ number_format(auth()->user()->bonus, 2, '.', '') }}
                                 {{ isset($currency) ? $currency : 'USD' }}</span></li>
-                        <li class="font-white"><span class="info-name">@lang('app.pyour_wager'):</span> <span class="info-value wager">{{ number_format(auth()->user()->wager, 2, '.', '') }}
+                        <li class="font-white"><span class="info-name">@lang('app.pyour_wager'):</span> <span
+                                class="info-value wager">{{ number_format(auth()->user()->wager, 2, '.', '') }}
                                 {{ isset($currency) ? $currency : 'USD' }}</span></li>
                         <!-- class disabled -->
                         @if (isset($refund) &&
-                        $refund &&
-                        auth()->user()->present()->count_refund > 0 &&
-                        auth()->user()->present()->balance <= $refund->min_balance)
+                                $refund &&
+                                auth()->user()->present()->count_refund > 0 &&
+                                auth()->user()->present()->balance <= $refund->min_balance)
                             <li class="font-white refunds-icon"><span class="info-name">@lang('app.pyour_refunds'):</span>
-                                <span class="info-value count_refund" id="refunds">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
+                                <span class="info-value count_refund"
+                                    id="refunds">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
                                     {{ isset($currency) ? $currency : 'USD' }}</span>
                             </li>
-                            @else
+                        @else
                             <li class="font-white refunds-icon disabled">
                                 <span class="info-name">Refunds:</span>
-                                <span class="info-value count_refund">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
+                                <span
+                                    class="info-value count_refund">{{ number_format(auth()->user()->count_refund, 2, '.', '') }}
                                     {{ isset($currency) ? $currency : 'USD' }}</span>
                             </li>
-                            @endif
+                        @endif
 
                     </ul>
-                    <div class="col-6" style="padding: 30px;"><img src="/frontend/Default/img/casino1.jpg" style="visibility: visible; width: 50%;float: right;"></div>
+                    <div class="col-6" style="padding: 30px;"><img src="/public/frontend/Default/img/casino1.jpg"
+                            style="visibility: visible; width: 50%;float: right;"></div>
                 </div>
             </div>
             <div class="modal__error" style="display: none"></div>
@@ -768,10 +848,10 @@ $(function() {
         <div class="modal-preloader" style="display:none"></div>
     </div>
 </div>
-<script type="text/javascript" src="/woocasino/js/web3.min.js"></script>
+<script type="text/javascript" src="/public/woocasino/js/web3.min.js"></script>
 <script>
     var elem = document.getElementById('elem');
-        elem.onclick = function() {
+    elem.onclick = function() {
 
         var currency_val = $("#currency").val();
 
@@ -801,14 +881,20 @@ $(function() {
             .then(res => window.location = res.data.url)
     };
 
-    async function initMetamask(){
-        const { ethereum } = window;
-        if(Boolean(ethereum && ethereum.isMetaMask)){
-            if(!ethereum.selectedAddress){
+    async function initMetamask() {
+        const {
+            ethereum
+        } = window;
+        if (Boolean(ethereum && ethereum.isMetaMask)) {
+            if (!ethereum.selectedAddress) {
                 try {
-                    await ethereum.request({ method: 'eth_requestAccounts' });
-                    const accounts = await ethereum.request({ method: 'eth_accounts' });
-                    if(accounts[0]){
+                    await ethereum.request({
+                        method: 'eth_requestAccounts'
+                    });
+                    const accounts = await ethereum.request({
+                        method: 'eth_accounts'
+                    });
+                    if (accounts[0]) {
                         // console.log('hard stress')
                         window.web3 = new Web3(ethereum);
                     } else {
@@ -833,36 +919,38 @@ $(function() {
         }
     }
 
-    $('#metamaskBtn').on('click', async ()=>{
+    $('#metamaskBtn').on('click', async () => {
         initMetamask();
     });
 
     let contractAddresses = {
-        busd:'0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
-        usdt:'0x55d398326f99059fF775485246999027B3197955',
-        usdc:'0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
+        busd: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+        usdt: '0x55d398326f99059fF775485246999027B3197955',
+        usdc: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
     }
-   //  let contractAddresses = {
+    //  let contractAddresses = {
     //   busd:'0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
     //   usdt:'0x337610d27c682E347C9cD60BD4b3b107C9d34dDd',
     //     usdc:'0x64544969ed7EBf5f083679233325356EbE738930'
     // }
 
-    $('#metamaskSend').on('click', async ()=>{
-        if(ethereum && ethereum.selectedAddress){
-            if(!window.web3.eth){
+    $('#metamaskSend').on('click', async () => {
+        if (ethereum && ethereum.selectedAddress) {
+            if (!window.web3.eth) {
                 window.web3 = new Web3(ethereum);
             }
             const chainId = "0x38";
-    //         const chainId = "0x61";
-            if(ethereum.chainId!==chainId){
-                try{
+            //         const chainId = "0x61";
+            if (ethereum.chainId !== chainId) {
+                try {
                     let result = await window.ethereum.request({
                         method: 'wallet_switchEthereumChain',
-                        params: [{ chainId }]
+                        params: [{
+                            chainId
+                        }]
                     });
                     // console.log(result)
-                }catch(e){
+                } catch (e) {
                     console.error(e)
                     return;
                 }
@@ -871,7 +959,7 @@ $(function() {
             let amount = Number($("#metamaskAmount").val()).toFixed(3);
             // console.log(amount)
 
-            if(amount<0.01){
+            if (amount < 0.01) {
                 swal({
                     title: 'Too small amount!',
                     icon: "warning",
@@ -879,7 +967,8 @@ $(function() {
             }
             let currency = $("#metamaskCurrency").val();
             const from = ethereum.selectedAddress;
-            const to = "{{ \VanguardLTE\Lib\Setting::get_value('metamask', 'wallet_address', auth()->user()->shop_id) }}";
+            const to =
+                "{{ \VanguardLTE\Lib\Setting::get_value('metamask', 'wallet_address', auth()->user()->shop_id) }}";
             const decimal = 18;
             const str15 = "000000000000000";
 
@@ -887,32 +976,36 @@ $(function() {
             // let contractAddress = "0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3";
             const contractAbi = getERC20ABI();
             // console.log(contractAbi,currency,amount, contractAddress, from)
-            let contract = new web3.eth.Contract(contractAbi, contractAddress, {from})
+            let contract = new web3.eth.Contract(contractAbi, contractAddress, {
+                from
+            })
             // console.log({contract})
             // let currentAmount = await contract.methods.balanceOf(from).call();
             // console.log(currentAmount);
-            try{
-                amount = amount*1000+str15;
+            try {
+                amount = amount * 1000 + str15;
                 // console.log(amount)
-                let trxHash = await contract.methods.transfer(to, amount).send({from});
+                let trxHash = await contract.methods.transfer(to, amount).send({
+                    from
+                });
                 // console.log(trxHash);
                 $.ajax({
                     url: "{{ route('frontend.profile.metamask') }}",
                     type: "get",
                     data: {
-                        hash : trxHash.transactionHash,
-                        currency:currency
+                        hash: trxHash.transactionHash,
+                        currency: currency
                     },
                     // data: {hash : "0x43cd09594601729c98823841046c6e5540d9abab0e5cdb7b78a5c915bd02e9ef"},
-                }).then(function(res){
+                }).then(function(res) {
                     console.log(res);
                     let data = JSON.parse(res);
-                    if( data.fail ) {
-                            swal({
-                                title: data.error,
-                                icon: "warning",
-                            });
-                    } else if( data.success ) {
+                    if (data.fail) {
+                        swal({
+                            title: data.error,
+                            icon: "warning",
+                        });
+                    } else if (data.success) {
                         swal({
                             title: 'Deposit was successful!',
                             icon: "success",
@@ -920,16 +1013,17 @@ $(function() {
                         // setTimeout(()=>{
                         //     window.location.reload();
                         // }, 3000)
-                        $('.balanceValue').text(Number(data.balance).toFixed(2)+' {{ isset($currency) ? $currency : "USD" }}');
+                        $('.balanceValue').text(Number(data.balance).toFixed(2) +
+                            ' {{ isset($currency) ? $currency : 'USD' }}');
                     }
-                }).catch(function(err){
+                }).catch(function(err) {
                     console.log(err)
                     swal({
                         title: 'Sorry, something went wrong!',
                         icon: "warning",
                     });
                 });
-            } catch(e){
+            } catch (e) {
                 console.error(e);
                 swal({
                     title: 'Transaction failed!',
@@ -937,303 +1031,296 @@ $(function() {
                 });
             }
         } else {
-           initMetamask();
+            initMetamask();
         }
     });
 
-    $('body').on('click', '#send', function(event){
+    $('body').on('click', '#send', function(event) {
         var pincode = $('#inputPin').val();
         $.ajax({
             url: "{{ route('frontend.profile.pincode') }}",
             type: "GET",
-            data: {pincode : pincode},
+            data: {
+                pincode: pincode
+            },
             dataType: "json",
-            success: function(data){
-                if( data.fail ){
+            success: function(data) {
+                if (data.fail) {
                     swal({
                         title: data.error,
                         icon: "warning",
                     });
                 }
-                if( data.success ){
+                if (data.success) {
                     window.location.reload();
                 }
             }
         });
     });
-    
-	$(".pay_modal").click(function (){
-	    var pay_modal = $(this).attr('data-href');
-	    if (pay_modal == "#balance") {
-		$("#div_balance").css('display','block');
-		$("#div_withdraw").css('display','none');
-	    } else {
-		$("#div_withdraw").css('display','block');
-		$("#div_balance").css('display','none');				
-	    }
-	    $(".pay_modal").removeClass('game-cat-active');
-	    $(this).addClass('game-cat-active');
-	});
-	$('.popup__menu').on('click', '.popup__link:not(.active)', function (event) {
-            event.preventDefault();
-            $(this) 
-                .addClass('active').siblings().removeClass('active')
-                .closest('.popup__body').find('.popup__cont').removeClass('active')
-                .eq($(this).index()).addClass('active');
-        });
 
-        $('.deposit__box').click(function() {
-            $(this).closest('.deposit__item').find('.deposit__cont').slideToggle();
-            $(this).closest('.deposit__item').toggleClass('active');
-            $(this).parent().siblings('.deposit__item').removeClass('active');
-           $(this).parent().siblings().children().next().slideUp();
-        });
-        $('#withdra_form').submit(function() {
-   //         alert('Thank you for the withdraw request can you please contact support via the live chat');
-        });
-	$('.history__name').click(function() {
-	    $(this).closest('.history__item').find('.history__cont').slideToggle();
-	    $(this).closest('.history__item').toggleClass('active');
-	    $(this).parent().siblings('.history__item').removeClass('active');
-	    $(this).parent().siblings().children().next().slideUp();
-	});
-	$(function(){
-	    try{
-		$('.table--history').eq(0).dataTable({"autoWidth": false, "columns":[{"width": "10%"},{"width": "25%"},{"width": "25%"},{"width": "20%"},{"width": "20%"}],"language": {
-    "paginate": {
-      "previous": "Prev"
-    }
-  }});
-	    }catch(e){}
-	    try{
-        	$('.table--history').eq(1).dataTable();
-	    }catch(e){}
-	})
-	$('.button-my-profile').click(function(){$('.popup__link').eq(0).click()});
-        $('.button-pay').click(function(){$('.popup__link').eq(2).click()});
-
- function getERC20ABI(){
-    return [
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "name",
-            "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-            {
-                "name": "_spender",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-            ],
-            "name": "approve",
-            "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "totalSupply",
-            "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-            {
-                "name": "_from",
-                "type": "address"
-            },
-            {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-            ],
-            "name": "transferFrom",
-            "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "decimals",
-            "outputs": [
-            {
-                "name": "",
-                "type": "uint8"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            }
-            ],
-            "name": "balanceOf",
-            "outputs": [
-            {
-                "name": "balance",
-                "type": "uint256"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [],
-            "name": "symbol",
-            "outputs": [
-            {
-                "name": "",
-                "type": "string"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-            {
-                "name": "_to",
-                "type": "address"
-            },
-            {
-                "name": "_value",
-                "type": "uint256"
-            }
-            ],
-            "name": "transfer",
-            "outputs": [
-            {
-                "name": "",
-                "type": "bool"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-            {
-                "name": "_owner",
-                "type": "address"
-            },
-            {
-                "name": "_spender",
-                "type": "address"
-            }
-            ],
-            "name": "allowance",
-            "outputs": [
-            {
-                "name": "",
-                "type": "uint256"
-            }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "payable": true,
-            "stateMutability": "payable",
-            "type": "fallback"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-            {
-                "indexed": true,
-                "name": "owner",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "spender",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "value",
-                "type": "uint256"
-            }
-            ],
-            "name": "Approval",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-            {
-                "indexed": true,
-                "name": "from",
-                "type": "address"
-            },
-            {
-                "indexed": true,
-                "name": "to",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "name": "value",
-                "type": "uint256"
-            }
-            ],
-            "name": "Transfer",
-            "type": "event"
+    $(".pay_modal").click(function() {
+        var pay_modal = $(this).attr('data-href');
+        if (pay_modal == "#balance") {
+            $("#div_balance").css('display', 'block');
+            $("#div_withdraw").css('display', 'none');
+        } else {
+            $("#div_withdraw").css('display', 'block');
+            $("#div_balance").css('display', 'none');
         }
+        $(".pay_modal").removeClass('game-cat-active');
+        $(this).addClass('game-cat-active');
+    });
+    $('.popup__menu').on('click', '.popup__link:not(.active)', function(event) {
+        event.preventDefault();
+        $(this)
+            .addClass('active').siblings().removeClass('active')
+            .closest('.popup__body').find('.popup__cont').removeClass('active')
+            .eq($(this).index()).addClass('active');
+    });
+
+    $('.deposit__box').click(function() {
+        $(this).closest('.deposit__item').find('.deposit__cont').slideToggle();
+        $(this).closest('.deposit__item').toggleClass('active');
+        $(this).parent().siblings('.deposit__item').removeClass('active');
+        $(this).parent().siblings().children().next().slideUp();
+    });
+    $('#withdra_form').submit(function() {
+        //         alert('Thank you for the withdraw request can you please contact support via the live chat');
+    });
+    $('.history__name').click(function() {
+        $(this).closest('.history__item').find('.history__cont').slideToggle();
+        $(this).closest('.history__item').toggleClass('active');
+        $(this).parent().siblings('.history__item').removeClass('active');
+        $(this).parent().siblings().children().next().slideUp();
+    });
+    $(function() {
+        try {
+            $('.table--history').eq(0).dataTable({
+                "autoWidth": false,
+                "columns": [{
+                    "width": "10%"
+                }, {
+                    "width": "25%"
+                }, {
+                    "width": "25%"
+                }, {
+                    "width": "20%"
+                }, {
+                    "width": "20%"
+                }],
+                "language": {
+                    "paginate": {
+                        "previous": "Prev"
+                    }
+                }
+            });
+        } catch (e) {}
+        try {
+            $('.table--history').eq(1).dataTable();
+        } catch (e) {}
+    })
+    $('.button-my-profile').click(function() {
+        $('.popup__link').eq(0).click()
+    });
+    $('.button-pay').click(function() {
+        $('.popup__link').eq(2).click()
+    });
+
+    function getERC20ABI() {
+        return [{
+                "constant": true,
+                "inputs": [],
+                "name": "name",
+                "outputs": [{
+                    "name": "",
+                    "type": "string"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [{
+                        "name": "_spender",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "approve",
+                "outputs": [{
+                    "name": "",
+                    "type": "bool"
+                }],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "totalSupply",
+                "outputs": [{
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [{
+                        "name": "_from",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "transferFrom",
+                "outputs": [{
+                    "name": "",
+                    "type": "bool"
+                }],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "decimals",
+                "outputs": [{
+                    "name": "",
+                    "type": "uint8"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [{
+                    "name": "_owner",
+                    "type": "address"
+                }],
+                "name": "balanceOf",
+                "outputs": [{
+                    "name": "balance",
+                    "type": "uint256"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [],
+                "name": "symbol",
+                "outputs": [{
+                    "name": "",
+                    "type": "string"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "constant": false,
+                "inputs": [{
+                        "name": "_to",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "transfer",
+                "outputs": [{
+                    "name": "",
+                    "type": "bool"
+                }],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "constant": true,
+                "inputs": [{
+                        "name": "_owner",
+                        "type": "address"
+                    },
+                    {
+                        "name": "_spender",
+                        "type": "address"
+                    }
+                ],
+                "name": "allowance",
+                "outputs": [{
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "payable": true,
+                "stateMutability": "payable",
+                "type": "fallback"
+            },
+            {
+                "anonymous": false,
+                "inputs": [{
+                        "indexed": true,
+                        "name": "owner",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "name": "spender",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Approval",
+                "type": "event"
+            },
+            {
+                "anonymous": false,
+                "inputs": [{
+                        "indexed": true,
+                        "name": "from",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": true,
+                        "name": "to",
+                        "type": "address"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "value",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Transfer",
+                "type": "event"
+            }
         ];
-}
+    }
 </script>

@@ -101,7 +101,7 @@
         </div>
         <!-- jackpot -->
         <div class="top-bar__logo-container">
-            <img class="top-bar__logo" src="/frontend/Default/img/header/logo.png" />
+            <img class="top-bar__logo" src="/public/frontend/Default/img/header/logo.png" />
         </div>
         <!-- jackpot -->
 
@@ -134,9 +134,9 @@
                     <button class="top-bar__sign-up button button-small ng-scope">DEPOSIT</button>
                 </div>
                 <a class="user__avatar" onclick="" href="{{ route('frontend.auth.logout') }}">
-                    <img src="/frontend/Default/img/default.ico" />
+                    <img src="/public/frontend/Default/img/default.ico" />
                 </a>
-                {{-- <link rel="stylesheet" href="/woocasino/css/payment.css">
+                {{-- <link rel="stylesheet" href="/public/woocasino/css/payment.css">
                 <div class="header-auth__anon-btn-wrp">
                     <a class="modal-btn button button-primary ng-scope"
                         ng-click="openModal($event, '#my-account')">{{ trans('app.my_profile') }}</a>
@@ -183,7 +183,7 @@
             <div class="header-auth ng-isolate-scope">
                 <div class="header-auth__anon ng-scope">
                     <div class="header-auth__anon-status">
-                        <img class="header-auth__anon-img" src="/woocasino/resources/images/status/anon.svg"
+                        <img class="header-auth__anon-img" src="/public/woocasino/resources/images/status/anon.svg"
                             alt="">
                     </div>
                     @if (!Auth::check())
@@ -198,7 +198,7 @@
                             <div class="statuses-panel__wrp">
                                 <a class="statuses-panel__wrp-img ng-scope">
                                     <img class="statuses-panel__img ng-scope" alt="statuses"
-                                        src="/woocasino/resources/images/status/w1.svg">
+                                        src="/public/woocasino/resources/images/status/w1.svg">
                                 </a>
                                 <div class="balance-info ng-isolate-scope" type="balance-selector">
 

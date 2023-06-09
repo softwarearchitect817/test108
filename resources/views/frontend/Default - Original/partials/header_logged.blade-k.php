@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/woocasino/css/appef20.css">
+<link rel="stylesheet" href="/public/woocasino/css/appef20.css">
 <style type="text/css">
     .info-value {
         color: grey;
@@ -38,7 +38,7 @@
 <header class="header">
     <div class="header__mob-container">
         <div class="header__logo">
-            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/woocasino/resources/images/logo.png" alt="247 Casino"> </a>
+            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/public/woocasino/resources/images/logo.png" alt="247 Casino"> </a>
         </div>
         <div class="header__mob-wrp">
             <button class="header__mob-btn button button-secondary button-small ng-scope" ng-click="openModal($event, '#my-account')">@lang('app.my_profile')</button>
@@ -49,12 +49,12 @@
     </div>
     <div class="header__container">
         <div class="header__logo">
-            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/woocasino/resources/images/logo.png" alt="WooCasino"> </a>
+            <a class="header__logo-link" scroll-up="" href="#"> <img class="header__logo-img" src="/public/woocasino/resources/images/logo.png" alt="WooCasino"> </a>
         </div>
         <div class="header__container-bg">
             <div class="header-auth ng-isolate-scope">
                 <div class="header-auth__anon ng-scope">
-                    <div class="header-auth__anon-status"> <img class="header-auth__w-img-img" src="/woocasino/resources/images/status/w1.svg" alt=""> </div>
+                    <div class="header-auth__anon-status"> <img class="header-auth__w-img-img" src="/public/woocasino/resources/images/status/w1.svg" alt=""> </div>
                     <div><button class="statuses-panel_btn button button-primary ng-scope" ng-click="openModal($event, '#my-account')">@lang('app.depositb')</button></div>
 
                     <div> <span style=" font-size:26px;color:#ffbb39;" class="info-value balanceValue">{{ number_format(auth()->user()->balance, 2, '.', '') }}
@@ -99,7 +99,7 @@
 
 <div class="modal" id="my-account" style="display: none;max-height: 100%;">
     <header class="modal__header">
-        <p style="text-align:left; margin-left:15px;"> <img src="/frontend/Default/img/logo1.png">{{ settings('app_name') }}.....Your Profile</p>
+        <p style="text-align:left; margin-left:15px;"> <img src="/public/frontend/Default/img/logo1.png">{{ settings('app_name') }}.....Your Profile</p>
 
         <span ng-click="closeModal($event)" class="modal__icon icon icon_cancel js-close-popup"></span>
     </header>
@@ -152,9 +152,9 @@
                     </div>
 
                 </form>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:150px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:150px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/profilep.png" style="margin-top:235px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/profilep.png" style="margin-top:235px;opacity: .9;" < /></div>
             </div>
 
             <!--
@@ -350,9 +350,9 @@
                     </div>
 
                 </div>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:315px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:315px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/history.png" style="margin-top:400px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/history.png" style="margin-top:400px;opacity: .9;" < /></div>
             </div>
 
             <div class="popup__cont active" id="div_balance">
@@ -370,7 +370,7 @@
                         <div class="deposit__box">
                             <div class="deposit__name">Crypto Payment</div>
                             <div class="deposit__payments">
-                                <img src="/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">
+                                <img src="/public/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">
                             </div>
                         </div>
                         <div class="deposit__cont" style="overflow: hidden; display: none;">
@@ -398,7 +398,7 @@
                         <div class="deposit__box">
                             <div class="deposit__name">@lang('app.btcpayserver')</div>
                             <div class="deposit__payments">
-                                <!--<img src="/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">-->
+                                <!--<img src="/public/frontend/Default/img/visa.png" alt="" class="deposit__payments-img">-->
                             </div>
                         </div>
                         <div class="deposit__cont" style="overflow: hidden; display: none;">
@@ -426,7 +426,7 @@
                         <div class="deposit__box">
                             <div class="deposit__name">@lang('app.pincode')</div>
                             <div class="deposit__payments">
-                                <img src="/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img">
+                                <img src="/public/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img">
                             </div>
                         </div>
                         <div class="deposit__cont" style="overflow: hidden; display: none;">
@@ -453,7 +453,7 @@
                             <div class="deposit__box">
                                 <div class="deposit__name">Metamask</div>
                                 <div class="deposit__payments">
-                                    {{-- <img src="/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img"> --}}
+                                    {{-- <img src="/public/frontend/Default/img/pincode.png" alt="" class="deposit__payments-img"> --}}
                                 </div>
                             </div>
                         </a>
@@ -480,12 +480,12 @@
                     </div>
                     @endif
                 </div>
-                <div class="popup__footer"><img src="/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:345px;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/bitcoin-casinos-bonus.png" style="margin-top:345px;" < /></div>
 
-                <div class="popup__footer"><img src="/frontend/Default/img/modefooter/deppage.png" style="margin-top:432px;opacity: .9;" < /></div>
+                <div class="popup__footer"><img src="/public/frontend/Default/img/modefooter/deppage.png" style="margin-top:432px;opacity: .9;" < /></div>
             </div>
             <div class="popup__cont" id="div_withdraw">
-                <p style="color: #ff0000;font-size: 16px;font-weight:normal;"><img src="/assets/icons8-support-60.png" style="float: left;position: relative;top: -13px;margin-right: 12px;}" />..</p>
+                <p style="color: #ff0000;font-size: 16px;font-weight:normal;"><img src="/public/assets/icons8-support-60.png" style="float: left;position: relative;top: -13px;margin-right: 12px;}" />..</p>
                 <br><br>
                 <header class="modal__header">
                     <div class="span modal__title">@lang('app.money_date')</div>
@@ -518,7 +518,7 @@
                 <div class="info-value"><span>@lang('app.pyour_balance'):</span> <span>{{ number_format(auth()->user()->balance, 2, '.', '') }}
                         {{ isset($currency) ? $currency : 'USD' }}</span></div>
                 {!! Form::close() !!}
-                <img src="/frontend/Default/img/modefooter/withdraw.png" < />
+                <img src="/public/frontend/Default/img/modefooter/withdraw.png" < />
             </div>
         </div>
     </div>
@@ -728,7 +728,7 @@ $(function() {
                     color: white;
                 ">Welcome {{ auth()->user()->username }}</p>
             <p data-nsfw-filter-status="swf" style="text-align: center;">
-                <img src="/frontend/Default/img/user1.png" data-nsfw-filter-status="sfw" style="visibility: visible;">
+                <img src="/public/frontend/Default/img/user1.png" data-nsfw-filter-status="sfw" style="visibility: visible;">
             </p>
             <p class="text-center" style="text-align: center;font-size: calc(0.90vw + 0.3rem);color: white;">@lang('app.current_statts_date')</p>
             <hr>
@@ -760,7 +760,7 @@ $(function() {
                             @endif
 
                     </ul>
-                    <div class="col-6" style="padding: 30px;"><img src="/frontend/Default/img/casino1.jpg" style="visibility: visible; width: 50%;float: right;"></div>
+                    <div class="col-6" style="padding: 30px;"><img src="/public/frontend/Default/img/casino1.jpg" style="visibility: visible; width: 50%;float: right;"></div>
                 </div>
             </div>
             <div class="modal__error" style="display: none"></div>
@@ -768,7 +768,7 @@ $(function() {
         <div class="modal-preloader" style="display:none"></div>
     </div>
 </div>
-<script type="text/javascript" src="/woocasino/js/web3.min.js"></script>
+<script type="text/javascript" src="/public/woocasino/js/web3.min.js"></script>
 <script>
     var elem = document.getElementById('elem');
         elem.onclick = function() {

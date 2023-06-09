@@ -1,13 +1,11 @@
-
 <meta charset="UTF-8">
 <title>JPS TV</title>
-<link rel="stylesheet" href="/global/jpstv/css/odometer-theme-default.css">
-<link rel="stylesheet" href="/global/jpstv/css/plazma_video_animations_style.css">
-<script src="/global/jpstv/js/config.js"></script>
-<script src="/global/jpstv/js/odometer.js"></script>
-<script src="/global/jpstv/js/jquery.js"></script>
+<link rel="stylesheet" href="/public/global/jpstv/css/odometer-theme-default.css">
+<link rel="stylesheet" href="/public/global/jpstv/css/plazma_video_animations_style.css">
+<script src="/public/global/jpstv/js/config.js"></script>
+<script src="/public/global/jpstv/js/odometer.js"></script>
+<script src="/public/global/jpstv/js/jquery.js"></script>
 <style>
-
     #jackpot_01 {
         top: 17%;
         left: 0;
@@ -63,7 +61,8 @@
         font-size: 50px;
         height: 10%;
     }
-    #winner-id #win-id-odometer{
+
+    #winner-id #win-id-odometer {
         top: 25%;
     }
 
@@ -76,12 +75,14 @@
         position: absolute;
         z-index: 20;
         text-align: center;
-        background: url("/global/jpstv/community_sign.png") top center no-repeat;
+        background: url("/public/global/jpstv/community_sign.png") top center no-repeat;
         margin-top: -30px;
     }
+
     .community_sign_2 {
         margin-top: -32px;
     }
+
     .community_sign_3 {
         margin-top: -34px;
     }
@@ -138,36 +139,64 @@
 </div>
 
 <script>
-    var main_video = '/global/jpstv/main_animation.ogv';
-    var hit_jackpots_videos = ['/global/jpstv/diamond_hit.ogv' , '/global/jpstv/platinum_hit.ogv', '/global/jpstv/gold_hit.ogv', '/global/jpstv/silver_hit.ogv', '/global/jpstv/bronze_hit.ogv', '/global/jpstv/iron_hit.ogv'];
+    var main_video = '/public/global/jpstv/main_animation.ogv';
+    var hit_jackpots_videos = ['/public/global/jpstv/diamond_hit.ogv', '/public/global/jpstv/platinum_hit.ogv',
+        '/public/global/jpstv/gold_hit.ogv', '/public/global/jpstv/silver_hit.ogv',
+        '/public/global/jpstv/bronze_hit.ogv', '/public/global/jpstv/iron_hit.ogv'
+    ];
     var id = {{ $id }};
 
     function resizeFonts(communities) {
-        $('#jackpot_01').css({'font-size': ( $(window).height() * 0.12133 ) + 'px'});
-        $('#jackpot_02').css({'font-size': ( $(window).height() * 0.10616) + 'px'});
-        $('#jackpot_03').css({'font-size': ( $(window).height() * 0.091) + 'px'});
-        $('#jackpot_04').css({'font-size': ( $(window).height() * 0.0829) + 'px'});
-        $('#jackpot_05').css({'font-size': ( $(window).height() * 0.0829) + 'px'});
-        $('#jackpot_06').css({'font-size': ( $(window).height() * 0.0788) + 'px'});
+        $('#jackpot_01').css({
+            'font-size': ($(window).height() * 0.12133) + 'px'
+        });
+        $('#jackpot_02').css({
+            'font-size': ($(window).height() * 0.10616) + 'px'
+        });
+        $('#jackpot_03').css({
+            'font-size': ($(window).height() * 0.091) + 'px'
+        });
+        $('#jackpot_04').css({
+            'font-size': ($(window).height() * 0.0829) + 'px'
+        });
+        $('#jackpot_05').css({
+            'font-size': ($(window).height() * 0.0829) + 'px'
+        });
+        $('#jackpot_06').css({
+            'font-size': ($(window).height() * 0.0788) + 'px'
+        });
 
-        $('#win-amount').css({'font-size': ( $(window).height() * 0.14155) + 'px'});
-        $('#winner-id').css({'font-size': ( $(window).width() * 0.02604) + 'px'});
+        $('#win-amount').css({
+            'font-size': ($(window).height() * 0.14155) + 'px'
+        });
+        $('#winner-id').css({
+            'font-size': ($(window).width() * 0.02604) + 'px'
+        });
 
         setTimeout(function() {
-            for (var i=1, w=0, h=0, d; i<=3; i++) {
+            for (var i = 1, w = 0, h = 0, d; i <= 3; i++) {
                 d = $('#jackpot_0' + i);
                 w = d.find('.odometer').width();
-                h = (d.find('.odometer-value img').length ? d.find('.odometer-value img').height() : d.find('.odometer-value').height()) + 15;
+                h = (d.find('.odometer-value img').length ? d.find('.odometer-value img').height() : d.find(
+                    '.odometer-value').height()) + 15;
                 if (communities != undefined) {
                     if ($.inArray(i, communities) >= 0 && !d.find('.community_sign_' + i).length) {
-                        $('<div class="community_sign_' + i + '"></div>').prependTo(d).css({'width': w + 'px', 'height': h + 'px'});
+                        $('<div class="community_sign_' + i + '"></div>').prependTo(d).css({
+                            'width': w + 'px',
+                            'height': h + 'px'
+                        });
                     }
                 } else if (d.find('.community_sign_' + i).length) {
-                    $('.community_sign_' + i).css({'width': w + 'px', 'height': h + 'px'});
+                    $('.community_sign_' + i).css({
+                        'width': w + 'px',
+                        'height': h + 'px'
+                    });
                 }
             }
         }, 100);
     }
 </script>
-<script src="/global/jpstv/js/plazma_video_animations_handler.js"></script>
-<script>initAll();</script>
+<script src="/public/global/jpstv/js/plazma_video_animations_handler.js"></script>
+<script>
+    initAll();
+</script>

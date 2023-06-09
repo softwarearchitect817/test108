@@ -81,32 +81,32 @@
                             <div class="providers__panel__tab">
                                 <button class="provider__btn provider__btn-active">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/ce3442857abea000b53aeb933058b183.svg" />
+                                        src="/public/frontend/Default/img/provider/ce3442857abea000b53aeb933058b183.svg" />
                                     <span>Lobby</span>
                                 </button>
                                 <button class="provider__btn">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/a05ea39da5b2e9a94eda052b077165b6.svg" />
+                                        src="/public/frontend/Default/img/provider/a05ea39da5b2e9a94eda052b077165b6.svg" />
                                     <span>Live Casino</span>
                                 </button>
                                 <button class="provider__btn">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/1224542224dcf2249a53f0b623216f6d.svg" />
+                                        src="/public/frontend/Default/img/provider/1224542224dcf2249a53f0b623216f6d.svg" />
                                     <span>Slot Games</span>
                                 </button>
                                 <button class="provider__btn">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/67123e64c2d8697d4833a833861dfd4e.svg" />
+                                        src="/public/frontend/Default/img/provider/67123e64c2d8697d4833a833861dfd4e.svg" />
                                     <span>Table Games</span>
                                 </button>
                                 <button class="provider__btn">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/0ff63b687a07e9c3f7a8af4f1eb1538d.svg" />
+                                        src="/public/frontend/Default/img/provider/0ff63b687a07e9c3f7a8af4f1eb1538d.svg" />
                                     <span>TV Games</span>
                                 </button>
                                 <button class="provider__btn">
                                     <img class="fa-mg"
-                                        src="/frontend/Default/img/provider/05e1b721f49c6f3d582c0c4c79a5d628.svg" />
+                                        src="/public/frontend/Default/img/provider/05e1b721f49c6f3d582c0c4c79a5d628.svg" />
                                     <span>Virtual Games</span>
                                 </button>
                             </div>
@@ -156,8 +156,8 @@
                                     <div class="game-item game-item--overflow ng-scope">
                                         <div class="game-item__block">
                                             <img class="game-item__img"
-                                                src="{{ $game->name ? '/frontend/Default/ico/' . $game->name . '.jpg' : '' }}"
-                                                casino-lazy-src="{{ $game->name ? '/frontend/Default/ico/' . $game->name . '.jpg' : '' }}"
+                                                src="{{ $game->name ? '/public/frontend/Default/ico/' . $game->name . '.jpg' : '' }}"
+                                                casino-lazy-src="{{ $game->name ? '/public/frontend/Default/ico/' . $game->name . '.jpg' : '' }}"
                                                 alt="{{ $game->title }}" loading="true" style="opacity: 1;">
 
                                             <!-- ngIf: game | gameJackpotByCurrency : $root.data.user.currency : 'EUR' -->
@@ -191,52 +191,52 @@
         <div class="mobile-menu-content" style="display: none">
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/69ac823a3e3f3da13f38ad599111f718.svg" />
+                    <img src="/public/frontend/Default/img/navbar/69ac823a3e3f3da13f38ad599111f718.svg" />
                     <span>@lang('app.home')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/89de24462cf869cc48c79973304ac121.svg" />
+                    <img src="/public/frontend/Default/img/navbar/89de24462cf869cc48c79973304ac121.svg" />
                     <span>@lang('app.sport')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/bd0f47fe765c8898e001138c8c13ba0b.svg" />
+                    <img src="/public/frontend/Default/img/navbar/bd0f47fe765c8898e001138c8c13ba0b.svg" />
                     <span>@lang('app.live')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope active">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/7da13915650dd8a73d3f2e6a8965c7c4.svg" />
+                    <img src="/public/frontend/Default/img/navbar/7da13915650dd8a73d3f2e6a8965c7c4.svg" />
                     <span>@lang('app.games')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/c10916867817cc453518a03f48bfe219.svg" />
+                    <img src="/public/frontend/Default/img/navbar/c10916867817cc453518a03f48bfe219.svg" />
                     <span>@lang('app.poker')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/ab5629123cee78b4e642ba6c734f3599.svg" />
+                    <img src="/public/frontend/Default/img/navbar/ab5629123cee78b4e642ba6c734f3599.svg" />
                     <span>@lang('app.payment')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/edcf5da3ba7eaf96e5c81dedca79d33b.svg" />
+                    <img src="/public/frontend/Default/img/navbar/edcf5da3ba7eaf96e5c81dedca79d33b.svg" />
                     <span>@lang('app.support')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/660d4671557687603e54c75d1a8f3309.svg" />
+                    <img src="/public/frontend/Default/img/navbar/660d4671557687603e54c75d1a8f3309.svg" />
                     <span>@lang('app.vip-club')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/78e71cfac0d4b6b1b399d01cadc87abb.svg" />
+                    <img src="/public/frontend/Default/img/navbar/78e71cfac0d4b6b1b399d01cadc87abb.svg" />
                     <span>@lang('app.tournament')</span> </a>
             </div>
             <div class="mobile-menu__item ng-scope">
                 <a class="mobile-menu__link mobile-menu__link--games" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/bd192847f70c923b02c98de6b042dd48.svg" />
+                    <img src="/public/frontend/Default/img/navbar/bd192847f70c923b02c98de6b042dd48.svg" />
                     <span>@lang('app.promotion')</span> </a>
             </div>
         </div>

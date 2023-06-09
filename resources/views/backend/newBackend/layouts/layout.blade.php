@@ -23,37 +23,29 @@
     <link href="https://netpos.gapi.lol/img/cashier-white/img/favicon.png" rel="shortcut icon">
     <link href="https://netpos.gapi.lol/apple-touch-icon.png" rel="apple-touch-icon">
     {{-- start  --}}
-    <link href="/back/netpos/bower_components/select2/dist/css/select2.min.css"
+    <link href="/public/back/netpos/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="/public/back/netpos/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/public/back/netpos/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
+    <link href="/public/back/netpos/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"
         rel="stylesheet">
-    <link
-        href="/back/netpos/bower_components/bootstrap-daterangepicker/daterangepicker.css"
-        rel="stylesheet">
-    <link href="/back/netpos/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
-    <link
-        href="/back/netpos/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"
-        rel="stylesheet">
-    <link href="/back/netpos/bower_components/fullcalendar/dist/fullcalendar.min.css"
-        rel="stylesheet">
-    <link
-        href="/back/netpos/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css"
-        rel="stylesheet">
+    <link href="/public/back/netpos/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="/public/back/netpos/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
 
-        {{-- End bower_components --}}
-    <link href="/back/netpos/css/picons-thin/style.css" rel="stylesheet">
-    <link href="/back/netpos/css/typicons/typicons.css" rel="stylesheet">
-    <link href="/back/netpos/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/back/netpos/css/maina570.css" rel="stylesheet">
-    <link href="/back/netpos/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="/back/netpos/css/summernote.css" rel="stylesheet">
-    <link href="/back/netpos/css/alertify.css" rel="stylesheet">
-    <link href="/back/netpos/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link href="/back/netpos/css/pisoglentis.css?v=2.1" rel="stylesheet">
-    <link href="/back/netpos/css/responsive.dataTables.min.css" rel="stylesheet">
+    {{-- End bower_components --}}
+    <link href="/public/back/netpos/css/picons-thin/style.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/typicons/typicons.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/maina570.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/summernote.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/alertify.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="/public/back/netpos/css/pisoglentis.css?v=2.1" rel="stylesheet">
+    <link href="/public/back/netpos/css/responsive.dataTables.min.css" rel="stylesheet">
     <style>
         .cke {
             visibility: hidden;
         }
-
     </style>
     <style type="text/css">
         body.swal2-shown {
@@ -1200,7 +1192,6 @@
                 transform: rotate(360deg);
             }
         }
-
     </style>
 </head>
 
@@ -1223,27 +1214,30 @@
         <div class="bounce3"></div>
     </div>
 
-   
+
     <div class="all-wrapper menu-side with-side-panel">
         <div class="layout-w">
-        @include("backend.newBackend.partials.shopSidebar")
+            @include('backend.newBackend.partials.shopSidebar')
             <div class="content-w">
                 @yield('content')
 
-</div>
+            </div>
         </div>
         <div class="display-type text-right"></div>
     </div>
-   
-                
-
-
-
-                @include('backend.newbackend.partials.modals')
 
 
 
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js" integrity="sha512-sl01o/gVwybF1FNzqO4NDRDNPJDupfN0o2+tMm4K2/nr35FjGlxlvXZ6kK6faa9zhXbnfLIXioHnExuwJdlTMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @include('backend.newbackend.partials.modals')
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"
+        integrity="sha512-sl01o/gVwybF1FNzqO4NDRDNPJDupfN0o2+tMm4K2/nr35FjGlxlvXZ6kK6faa9zhXbnfLIXioHnExuwJdlTMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>

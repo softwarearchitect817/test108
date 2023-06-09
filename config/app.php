@@ -195,13 +195,13 @@ return [
         VanguardLTE\Providers\RouteServiceProvider::class,
 
         VanguardLTE\Providers\SMSToServiceProvider::class,
-		
+
 		jeremykenedy\LaravelRoles\RolesServiceProvider::class,
-		
+
         Yajra\DataTables\DataTablesServiceProvider::class,
 
         Intergo\SmsTo\ServiceProvider::class,
-	
+
 	Laravel\Socialite\SocialiteServiceProvider::class
     ],
 

@@ -16,14 +16,14 @@
     <title>@yield('page-title') - {{ settings('app_name') }}</title>
 
     <!-- META TAGS -->
-    <link rel="shortcut icon" type="image/png" href="/woocasino/images/favicon/spc.png">
-    <link rel="icon" type="image/png" href="/woocasino/images/favicon/spc.png">
-    <link rel="apple-touch-icon" href="/woocasino/images/favicon/spc-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/woocasino/images/favicon/spc-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/woocasino/images/favicon/spc-ipad2.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/woocasino/images/favicon/spc-ipad3.png">
+    <link rel="shortcut icon" type="image/png" href="/public/woocasino/images/favicon/spc.png">
+    <link rel="icon" type="image/png" href="/public/woocasino/images/favicon/spc.png">
+    <link rel="apple-touch-icon" href="/public/woocasino/images/favicon/spc-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/woocasino/images/favicon/spc-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/public/woocasino/images/favicon/spc-ipad2.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/woocasino/images/favicon/spc-ipad3.png">
 
-    <meta name="msapplication-TileImage" content="/woocasino/mstile-144x144.png" />
+    <meta name="msapplication-TileImage" content="/public/woocasino/mstile-144x144.png" />
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="HandheldFriendly" content="true" />
@@ -35,100 +35,100 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext"
         rel="stylesheet">
 
-    <script src="/frontend/Default/js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="/woocasino/js/angular.min.js"></script>
+    <script src="/public/frontend/Default/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/angular.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="/woocasino/js/html5shiv.min.js"></script>
-    <script src="/woocasino/js/respond.min.js"></script><![endif]-->
+    <script src="/public/woocasino/js/html5shiv.min.js"></script>
+    <script src="/public/woocasino/js/respond.min.js"></script><![endif]-->
 
     <!-- DEFAULT CSS -->
-    <link href="/woocasino/css/reset.css" rel="stylesheet" type="text/css" class="styles" />
+    <link href="/public/woocasino/css/reset.css" rel="stylesheet" type="text/css" class="styles" />
     <!-- Flags -->
-    <link rel="stylesheet" href="/woocasino//flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/public/woocasino//flag-icon-css/css/flag-icon.min.css">
     <!-- Perfect scrollbar css -->
-    <link rel="stylesheet" type="text/css" href="/woocasino/css/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/public/woocasino/css/perfect-scrollbar.css">
     <!-- zebra datepicker -->
-    <link rel="stylesheet" type="text/css" href="/woocasino/css/zebra_datepicker.css">
+    <link rel="stylesheet" type="text/css" href="/public/woocasino/css/zebra_datepicker.css">
     <!-- START OF ALL CUSTOM CSS + FONTS -->
-    <link href="/woocasino/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/woocasino/css/regional.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/woocasino/css/oct7vfe.css">
+    <link href="/public/woocasino/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/public/woocasino/css/regional.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/public/woocasino/css/oct7vfe.css">
 
     <!-- DEFAULT JS SCRIPTS -->
     <!--[if lt IE 9]>
-    <script src="/woocasino/js/html5-shiv.js" type="text/javascript"></script>
+    <script src="/public/woocasino/js/html5-shiv.js" type="text/javascript"></script>
     <![endif]-->
 </head>
 
-<body style="background: url(/frontend/Default/img/background.gif)" class="en" ng-app="app"
+<body style="background: url(/public/frontend/Default/img/background.gif)" class="en" ng-app="app"
     ng-controller="gameCtrl">
     {{-- <div class="init-loading">
-        <img src="/frontend/Default/img/loading.gif" />
+        <img src="/public/frontend/Default/img/loading.gif" />
     </div> --}}
 
     <style>
         @-webkit-keyframes lights {
             0% {
-                background-image: url("/woocasino/images/cobranded_board.png");
+                background-image: url("/public/woocasino/images/cobranded_board.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_1.png");
             }
         }
 
         @-webkit-keyframes lightsMobile {
             0% {
-                background-image: url("/woocasino/images/cobranded_board_mobile.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_mobile_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile_1.png");
             }
         }
 
         @-moz-keyframes lights {
             0% {
-                background-image: url("/woocasino/images/cobranded_board.png");
+                background-image: url("/public/woocasino/images/cobranded_board.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_1.png");
             }
         }
 
         @-moz-keyframes lightsMobile {
             0% {
-                background-image: url("/woocasino/images/cobranded_board_mobile.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_mobile_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile_1.png");
             }
         }
 
         @keyframes lights {
             0% {
-                background-image: url("/woocasino/images/cobranded_board.png");
+                background-image: url("/public/woocasino/images/cobranded_board.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_1.png");
             }
         }
 
         @keyframes lightsMobile {
             0% {
-                background-image: url("/woocasino/images/cobranded_board_mobile.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile.png");
             }
 
             100% {
-                background-image: url("/woocasino/images/cobranded_board_mobile_1.png");
+                background-image: url("/public/woocasino/images/cobranded_board_mobile_1.png");
             }
         }
 
         .games__hero__wrapper {
-            background-image: url("/woocasino/images/spin-mobile.jpg");
+            background-image: url("/public/woocasino/images/spin-mobile.jpg");
             padding-bottom: 123vw;
             position: relative;
         }
@@ -144,7 +144,7 @@
             animation-duration: 0.75s;
             animation-iteration-count: infinite;
             position: absolute;
-            background-image: url("/woocasino/images/cobranded_board_mobile.png");
+            background-image: url("/public/woocasino/images/cobranded_board_mobile.png");
             background-size: 100%;
             background-repeat: no-repeat;
             right: 2vw;
@@ -163,7 +163,7 @@
             animation-duration: 0.75s;
             animation-iteration-count: infinite;
             position: absolute;
-            background-image: url("/woocasino/images/cobranded_board.png");
+            background-image: url("/public/woocasino/images/cobranded_board.png");
             background-size: 100%;
             background-repeat: no-repeat;
             right: 2vw;
@@ -324,7 +324,7 @@
             }
 
             .games__hero__wrapper {
-                background-image: url("/woocasino/images/spin-desktop.jpg");
+                background-image: url("/public/woocasino/images/spin-desktop.jpg");
                 padding-bottom: 31vw;
             }
 
@@ -480,7 +480,8 @@
 
     @include('frontend.Default.partials.navbar')
 
-    <section class="section section_main" style="background: url(/frontend/Default/img/background.gif);padding-left:1%">
+    <section class="section section_main"
+        style="background: url(/public/frontend/Default/img/background.gif);padding-left:1%">
         @yield('content')
 
     </section>
@@ -529,34 +530,34 @@
         <div class="col-1">
             <div class="games__footer__icons">
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_1.png" />
+                    <img src="/public/woocasino/images/footer_icons_1.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_2.png" />
+                    <img src="/public/woocasino/images/footer_icons_2.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_4.png" />
+                    <img src="/public/woocasino/images/footer_icons_4.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/en18logo.png" />
+                    <img src="/public/woocasino/images/en18logo.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/gambleaware.png" />
+                    <img src="/public/woocasino/images/gambleaware.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/microgaming.png" />
+                    <img src="/public/woocasino/images/microgaming.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_5.png" />
+                    <img src="/public/woocasino/images/footer_icons_5.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_6.png" />
+                    <img src="/public/woocasino/images/footer_icons_6.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_7.png" />
+                    <img src="/public/woocasino/images/footer_icons_7.png" />
                 </a>
                 <a target="_blank" href="#" style="display:inline-block;">
-                    <img src="/woocasino/images/footer_icons_8.png" />
+                    <img src="/public/woocasino/images/footer_icons_8.png" />
                 </a>
             </div>
             <div class="about-support">Gambling can be addictive. Play responsibly. Play for fun and stop when you
@@ -564,16 +565,16 @@
                 take action, get in touch with us should you have any concerns.</div>
             <div class="games__footer__btns">
                 <div class="games__footer__btns__item">
-                    <img src="/frontend/Default/img/footer/18plus.svg" />
+                    <img src="/public/frontend/Default/img/footer/18plus.svg" />
                 </div>
                 <div class="games__footer__btns__item">
-                    <img src="/frontend/Default/img/footer/gamecare.png" />
+                    <img src="/public/frontend/Default/img/footer/gamecare.png" />
                 </div>
                 <div class="games__footer__btns__item">
-                    <img src="/frontend/Default/img/footer/111.png" />
+                    <img src="/public/frontend/Default/img/footer/111.png" />
                 </div>
                 <div class="games__footer__btns__item">
-                    <img src="/frontend/Default/img/footer/Gaming-Curacao-ClickToVerify.png" />
+                    <img src="/public/frontend/Default/img/footer/Gaming-Curacao-ClickToVerify.png" />
                 </div>
             </div>
             <div class="games__footer__btns">
@@ -588,14 +589,14 @@
         <ul class="mobile__footer__menu__list">
             <li>
                 <a class="mobile__footer__menu__link" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/69ac823a3e3f3da13f38ad599111f718.svg" />
+                    <img src="/public/frontend/Default/img/navbar/69ac823a3e3f3da13f38ad599111f718.svg" />
                     <br />
                     <span class="header-menu__text ng-binding">@lang('app.home')</span>
                 </a>
             </li>
             <li>
                 <a class="mobile__footer__menu__link" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/89de24462cf869cc48c79973304ac121.svg" />
+                    <img src="/public/frontend/Default/img/navbar/89de24462cf869cc48c79973304ac121.svg" />
                     <br />
                     <span class="header-menu__text ng-binding">@lang('app.sport')</span>
                 </a>
@@ -603,7 +604,7 @@
             @if (!isset(auth()->user()->username))
                 <li>
                     <a class="mobile__footer__menu__link" scroll-up="">
-                        <img src="/frontend/Default/img/navbar/90d9bca949db052d573621ea6028161c.svg" />
+                        <img src="/public/frontend/Default/img/navbar/90d9bca949db052d573621ea6028161c.svg" />
                         <br />
                         <span class="header-menu__text ng-binding">@lang('app.login')</span>
                     </a>
@@ -611,7 +612,7 @@
             @else
                 <li>
                     <a class="mobile__footer__menu__link" scroll-up="">
-                        <img src="/frontend/Default/img/navbar/d9d8d8a25e4e951dbef8f3ba5dededfa.svg" />
+                        <img src="/public/frontend/Default/img/navbar/d9d8d8a25e4e951dbef8f3ba5dededfa.svg" />
                         <br />
                         <span class="header-menu__text ng-binding">Deposit</span>
                     </a>
@@ -619,14 +620,14 @@
             @endif
             <li>
                 <a class="mobile__footer__menu__link" style="color: rgb(255, 170, 0) !important" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/7da13915650dd8a73d3f2e6a8965c7c4.svg" />
+                    <img src="/public/frontend/Default/img/navbar/7da13915650dd8a73d3f2e6a8965c7c4.svg" />
                     <br />
                     <span class="header-menu__text ng-binding">@lang('app.game')</span>
                 </a>
             </li>
             <li>
                 <a class="mobile__footer__menu__link" scroll-up="">
-                    <img src="/frontend/Default/img/navbar/c10916867817cc453518a03f48bfe219.svg" />
+                    <img src="/public/frontend/Default/img/navbar/c10916867817cc453518a03f48bfe219.svg" />
                     <br />
                     <span class="header-menu__text ng-binding">@lang('app.poker')</span>
                 </a>
@@ -738,10 +739,10 @@
             color: #7a334f;
         }
     </style>
-    <!-- <script type="text/javascript" src="/woocasino/js/jquery-1.7.1.min.js"></script> -->
-    <script type="text/javascript" src="/woocasino/js/jquery.corsproxy.1.0.0.js"></script>
-    <script type="text/javascript" src="/woocasino/js/perfect-scrollbar.jquery.js"></script>
-    <script type="text/javascript" src="/woocasino/js/zebra_datepicker.min.js"></script>
+    <!-- <script type="text/javascript" src="/public/woocasino/js/jquery-1.7.1.min.js"></script> -->
+    <script type="text/javascript" src="/public/woocasino/js/jquery.corsproxy.1.0.0.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/perfect-scrollbar.jquery.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/zebra_datepicker.min.js"></script>
     <!-- Set CSRF token to each interaction -->
     <script>
         $.ajaxSetup({
@@ -750,10 +751,10 @@
             }
         });
     </script>
-    <script type="text/javascript" src="/woocasino/js/app.js"></script>
-    <script type="text/javascript" src="/woocasino/js/angular-lazy-img.min.js"></script>
-    <script type="text/javascript" src="/woocasino/js/gameController.js"></script>
-    <script type="text/javascript" src="/woocasino/js/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/app.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/angular-lazy-img.min.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/gameController.js"></script>
+    <script type="text/javascript" src="/public/woocasino/js/sweetalert.min.js"></script>
     <script>
         //Initialise lp config object
         var config = new LPConfig();
